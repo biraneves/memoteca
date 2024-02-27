@@ -13,6 +13,8 @@ $gray-200: #f8f9fe;
 
 $red-500: #f00;
 
+$black: #000;
+
 // Functions
 @function p2r($targetSize, $baseSize: 16px) {
   @return math.div($targetSize, $baseSize) + rem;

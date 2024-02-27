@@ -1,0 +1,144 @@
+@use '../../../../misc';
+
+.header {
+  padding: misc.p2r(32px);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.button {
+  margin: 5px;
+  margin-top: 70px;
+  width: 200px;
+}
+
+.add-thoughts {
+  padding: misc.p2r(32px) 0;
+
+  form {
+    background: misc.$aqua-100;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: misc.p2r(32px);
+
+    label {
+      color: misc.$blue-500;
+      font-weight: bold;
+      margin: 0 0 misc.p2r(16px);
+    }
+
+    .input {
+      border: none;
+      height: 40px;
+      padding: misc.p2r(16px) misc.p2r(32px);
+      border-radius: 20px;
+      margin: misc.p2r(8px) 0 misc.p2r(32px);
+    }
+
+    .textarea {
+      border: none;
+      padding: misc.p2r(16px) misc.p2r(32px);
+      border-radius: 20px;
+      margin: misc.p2r(8px) 0 misc.p2r(32px);
+      resize: none;
+    }
+  }
+}
+
+.container-radio {
+  display: flex;
+  gap: misc.p2r(40px);
+  flex-wrap: wrap;
+}
+
+.models {
+  display: flex;
+  gap: misc.p2r(40px);
+  border: 1px solid misc.$red-500;
+}
+
+.model {
+  background-color: misc.$gray-200;
+  padding: misc.p2r(16px);
+  max-width: 250px;
+  margin: misc.p2r(16px) 0 misc.p2r(32px);
+
+  .content {
+    margin: misc.p2r(16px) auto;
+    word-wrap: break-word;
+  }
+
+  .author {
+    word-wrap: break-word;
+  }
+}
+
+.radio {
+  margin: 0;
+}
+
+.model1 {
+  box-shadow: 8px 8px 0 misc.$blue-500;
+}
+
+.model2 {
+  box-shadow: 8px 8px 0 misc.$blue-300;
+}
+
+.model3 {
+  box-shadow: 8px 8px 0 misc.$aqua-500;
+}
+
+input {
+  &[type='radio'] {
+    display: none;
+
+    &:checked {
+      & + .custom-radio {
+        border-color: misc.$blue-500;
+
+        span {
+          background-color: misc.$blue-500;
+        }
+      }
+    }
+  }
+}
+
+.radio-model {
+  label {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+}
+
+.custom-radio {
+  border: 1px solid misc.$blue-500;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+
+  span {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border-radius: 50%;
+  }
+}
+
+.custom-radio,
+span {
+  transition: 0.5s ease;
+  color: misc.$blue-500;
+}

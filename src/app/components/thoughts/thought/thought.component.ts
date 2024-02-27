@@ -1,10 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-interface Thought {
-  content: string;
-  author: string;
-  model: string;
-}
+import { Thought } from '../thoughts';
 
 @Component({
   selector: 'app-thought',

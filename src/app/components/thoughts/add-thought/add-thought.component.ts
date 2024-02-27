@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Thought } from '../thoughts';
+import { ThoughtService } from '../thought.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-thought',
@@ -6,18 +9,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-thought.component.scss'],
 })
 export class AddThoughtComponent {
-  thought = {
-    id: '1',
-    content: 'Aprendendo Angular',
-    author: 'Dev',
-    model: 'model2',
+  thought: Thought = {
+    content: '',
+    author: '',
+    model: 'model1',
   };
 
+  constructor(private service: ThoughtService, private router: Router) {}
+
   addThought() {
-    alert('Novo pensamento criado');
+    this.service.create(this.thought).subscribe(() => {
+      this.router.navigate(['/']);
+    });
   }
 
-  cancelThought() {
-    alert('Cancelado');
+  cancel() {
+    this.router.navigate(['/']);
   }
 }
