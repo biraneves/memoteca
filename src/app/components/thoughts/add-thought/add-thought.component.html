@@ -2,23 +2,21 @@
   <header class="header">
     <h2>Adicione um<br />pensamento novo:</h2>
   </header>
-  <form>
+  <form [formGroup]="form">
     <label for="thought">Pensamento</label>
     <textarea
       class="textarea"
-      name="thought"
+      formControlName="content"
       id="thought"
       placeholder="Digite o pensamento"
-      [(ngModel)]="thought.content"
     ></textarea>
     <label for="author">Autoria</label>
     <input
       type="text"
       class="input"
       id="author"
-      name="author"
+      formControlName="author"
       placeholder="Informe a autoria ou fonte"
-      [(ngModel)]="thought.author"
     />
     <label for="model">Selecione o modelo do card</label>
     <div class="container-radio">
@@ -28,8 +26,7 @@
             type="radio"
             id="model1"
             value="model1"
-            name="model-card"
-            [(ngModel)]="thought.model"
+            formControlName="model"
           />
           <div class="custom-radio">
             <span></span>
@@ -39,9 +36,9 @@
         Prévia:
         <div class="model model1 ff-roboto-mono">
           <img src="../../../../assets/images/model1.png" alt="Aspas azuis" />
-          <p class="content">{{ thought.content }}</p>
+          <p class="content">{{ form.get('content')?.value }}</p>
           <p class="author">
-            <strong>{{ thought.author }}</strong>
+            <strong>{{ form.get('author')?.value }}</strong>
           </p>
         </div>
       </div>
@@ -51,8 +48,7 @@
             type="radio"
             id="model2"
             value="model2"
-            name="model-card"
-            [(ngModel)]="thought.model"
+            formControlName="model"
           />
           <div class="custom-radio">
             <span></span>
@@ -65,9 +61,9 @@
             src="../../../../assets/images/model2.png"
             alt="Aspas azul claro"
           />
-          <p class="content">{{ thought.content }}</p>
+          <p class="content">{{ form.get('content')?.value }}</p>
           <p class="author">
-            <strong>{{ thought.author }}</strong>
+            <strong>{{ form.get('author')?.value }}</strong>
           </p>
         </div>
       </div>
@@ -77,8 +73,7 @@
             type="radio"
             id="model3"
             value="model3"
-            name="model-card"
-            [(ngModel)]="thought.model"
+            formControlName="model"
           />
           <div class="custom-radio">
             <span></span>
@@ -88,9 +83,9 @@
         Prévia:
         <div class="model model3 ff-roboto-mono">
           <img src="../../../../assets/images/model3.png" alt="Aspas verdes" />
-          <p class="content">{{ thought.content }}</p>
+          <p class="content">{{ form.get('content')?.value }}</p>
           <p class="author">
-            <strong>{{ thought.author }}</strong>
+            <strong>{{ form.get('author')?.value }}</strong>
           </p>
         </div>
       </div>
