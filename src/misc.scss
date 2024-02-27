@@ -4,9 +4,14 @@
 $white: #fff;
 
 $aqua-500: #84eec1;
+$aqua-100: #c4edff;
 
 $blue-300: #68d1ff;
 $blue-500: #154580;
+
+$gray-200: #f8f9fe;
+
+$red-500: #f00;
 
 // Functions
 @function p2r($targetSize, $baseSize: 16px) {
