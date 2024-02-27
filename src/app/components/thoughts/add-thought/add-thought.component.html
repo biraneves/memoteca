@@ -9,7 +9,7 @@
       name="thought"
       id="thought"
       placeholder="Digite o pensamento"
-      [value]="thought.content"
+      [(ngModel)]="thought.content"
     ></textarea>
     <label for="author">Autoria</label>
     <input
@@ -18,13 +18,19 @@
       id="author"
       name="author"
       placeholder="Informe a autoria ou fonte"
-      [value]="thought.author"
+      [(ngModel)]="thought.author"
     />
     <label for="model">Selecione o modelo do card</label>
     <div class="container-radio">
       <div class="radio-model">
         <label for="model1">
-          <input type="radio" id="model1" value="model1" name="model-card" />
+          <input
+            type="radio"
+            id="model1"
+            value="model1"
+            name="model-card"
+            [(ngModel)]="thought.model"
+          />
           <div class="custom-radio">
             <span></span>
           </div>
@@ -41,7 +47,13 @@
       </div>
       <div class="radio-model">
         <label for="model2">
-          <input type="radio" id="model2" value="model2" name="model-card" />
+          <input
+            type="radio"
+            id="model2"
+            value="model2"
+            name="model-card"
+            [(ngModel)]="thought.model"
+          />
           <div class="custom-radio">
             <span></span>
           </div>
@@ -61,7 +73,13 @@
       </div>
       <div class="radio-model">
         <label for="model3">
-          <input type="radio" id="model3" value="model3" name="model-card" />
+          <input
+            type="radio"
+            id="model3"
+            value="model3"
+            name="model-card"
+            [(ngModel)]="thought.model"
+          />
           <div class="custom-radio">
             <span></span>
           </div>

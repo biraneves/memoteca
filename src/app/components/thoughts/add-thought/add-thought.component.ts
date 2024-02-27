@@ -10,7 +10,7 @@ export class AddThoughtComponent {
     id: '1',
     content: 'Aprendendo Angular',
     author: 'Dev',
-    model: '',
+    model: 'model2',
   };
 
   addThought() {
