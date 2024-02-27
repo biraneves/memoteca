@@ -12,4 +12,12 @@ export class AddThoughtComponent {
     author: 'Dev',
     model: '',
   };
+
+  addThought() {
+    alert('Novo pensamento criado');
+  }
+
+  cancelThought() {
+    alert('Cancelado');
+  }
 }
