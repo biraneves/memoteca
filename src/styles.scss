@@ -1,1 +1,74 @@
-/* You can add global styles to this file, and also import other style files */
+@use './misc';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;500;600;700;800;900&family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ff-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.ff-roboto-mono {
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+h2 {
+  color: misc.$blue-500;
+  font-weight: bold;
+  font-size: misc.p2r(32px);
+  text-align: center;
+}
+
+.header {
+  margin: misc.p2r(16px) auto misc.p2r(32px);
+}
+
+.container {
+  padding: misc.p2r(16px);
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (min-width: 576px) {
+    width: 540px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 720px;
+  }
+
+  @media screen and (min-width: 992px) {
+    width: 960px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1140px;
+  }
+}
+
+.button {
+  background: misc.$blue-500;
+  color: misc.$white;
+  max-width: misc.p2r(270px);
+  width: misc.p2r(250px);
+  padding: misc.p2r(16px);
+  margin: 0 auto;
+  border: 2px solid misc.$blue-500;
+  border-radius: 10px;
+  transition: 0.5s ease;
+
+  &:hover {
+    border: 2px solid misc.$aqua-500;
+    color: misc.$aqua-500;
+  }
+}

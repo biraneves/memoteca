@@ -1,0 +1,11 @@
+@use 'sass:math';
+
+// Colors
+$white: #fff;
+$aqua-500: #84eec1;
+$blue-500: #154580;
+
+// Functions
+@function p2r($targetSize, $baseSize: 16px) {
+  @return math.div($targetSize, $baseSize) + rem;
+}
