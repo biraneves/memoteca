@@ -1,0 +1,64 @@
+@use '../../../../misc';
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-button,
+.edit-button {
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.delete-button {
+  margin-left: 5px;
+}
+
+.edit-button {
+  margin-right: 10px;
+}
+
+.thought {
+  background-color: misc.$gray-200;
+  padding: misc.p2r(16px);
+
+  .content {
+    margin: misc.p2r(16px) auto;
+    word-wrap: break-word;
+  }
+
+  .author {
+    word-wrap: break-word;
+    font-weight: bold;
+  }
+}
+
+.model1 {
+  box-shadow: 8px 8px 0 misc.$blue-500;
+}
+
+.model2 {
+  box-shadow: 8px 8px 0 misc.$blue-300;
+}
+
+.model3 {
+  box-shadow: 8px 8px 0 misc.$aqua-500;
+}
+
+.thought-l {
+  width: 556px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.thought-s {
+  width: 262px;
+
+  @media screen and (max-width: 426px) {
+    width: 100%;
+  }
+}
