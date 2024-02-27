@@ -9,6 +9,7 @@
       name="thought"
       id="thought"
       placeholder="Digite o pensamento"
+      [value]="thought.content"
     ></textarea>
     <label for="author">Autoria</label>
     <input
@@ -17,6 +18,7 @@
       id="author"
       name="author"
       placeholder="Informe a autoria ou fonte"
+      [value]="thought.author"
     />
     <label for="model">Selecione o modelo do card</label>
     <div class="container-radio">
@@ -31,8 +33,10 @@
         Prévia:
         <div class="model model1 ff-roboto-mono">
           <img src="../../../../assets/images/model1.png" alt="Aspas azuis" />
-          <p class="content">Aqui vai o conteúdo</p>
-          <p class="author">Aqui vai a <strong>autoria</strong></p>
+          <p class="content">{{ thought.content }}</p>
+          <p class="author">
+            <strong>{{ thought.author }}</strong>
+          </p>
         </div>
       </div>
       <div class="radio-model">
@@ -49,8 +53,10 @@
             src="../../../../assets/images/model2.png"
             alt="Aspas azul claro"
           />
-          <p class="content">Aqui vai o conteúdo</p>
-          <p class="author">Aqui vai a <strong>autoria</strong></p>
+          <p class="content">{{ thought.content }}</p>
+          <p class="author">
+            <strong>{{ thought.author }}</strong>
+          </p>
         </div>
       </div>
       <div class="radio-model">
@@ -64,8 +70,10 @@
         Prévia:
         <div class="model model3 ff-roboto-mono">
           <img src="../../../../assets/images/model3.png" alt="Aspas verdes" />
-          <p class="content">Aqui vai o conteúdo</p>
-          <p class="author">Aqui vai a <strong>autoria</strong></p>
+          <p class="content">{{ thought.content }}</p>
+          <p class="author">
+            <strong>{{ thought.author }}</strong>
+          </p>
         </div>
       </div>
     </div>
