@@ -12,12 +12,13 @@ export class ListThoughtsComponent implements OnInit {
   presentPage: number = 1;
   moreThoughtsExist: boolean = true;
   filter: string = '';
+  favorites: boolean = false;
 
   constructor(private service: ThoughtService) {}
 
   ngOnInit(): void {
     this.service
-      .list(this.presentPage, this.filter)
+      .list(this.presentPage, this.filter, this.favorites)
       .subscribe((listThoughts) => {
         this.listThoughts = listThoughts;
       });
@@ -25,7 +26,7 @@ export class ListThoughtsComponent implements OnInit {
 
   loadMoreThoughts() {
     this.service
-      .list(++this.presentPage, this.filter)
+      .list(++this.presentPage, this.filter, this.favorites)
       .subscribe((listThoughts) => {
         this.listThoughts.push(...listThoughts);
 
@@ -38,7 +39,19 @@ export class ListThoughtsComponent implements OnInit {
     this.moreThoughtsExist = true;
 
     this.service
-      .list(this.presentPage, this.filter)
+      .list(this.presentPage, this.filter, this.favorites)
+      .subscribe((listThoughts) => {
+        this.listThoughts = listThoughts;
+      });
+  }
+
+  listFavorites() {
+    this.presentPage = 1;
+    this.moreThoughtsExist = true;
+    this.favorites = true;
+
+    this.service
+      .list(this.presentPage, this.filter, this.favorites)
       .subscribe((listThoughts) => {
         this.listThoughts = listThoughts;
       });
