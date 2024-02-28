@@ -19,7 +19,7 @@
       "content": "Na minha máquina funciona!",
       "author": "Dev Cara de Pau",
       "model": "model2",
-      "favorite": true
+      "favorite": false
     },
     {
       "content": "Na ciência da computação, dizemos que há 10 tipos de pessoas: aquelas que entendem binário e aquelas que não. Mas se você achar que programar é fácil, é porque você não entendeu o problema... ou talvez você seja um compilador disfarçado, pronto para debugar nossas vidas com lógica e um pouco de café.",

@@ -9,6 +9,7 @@ import { ThoughtService } from '../thought.service';
 })
 export class ThoughtComponent {
   @Input() thought!: Thought;
+  @Input() listFavorites: Thought[] = [];
 
   constructor(private service: ThoughtService) {}
 
@@ -27,6 +28,8 @@ export class ThoughtComponent {
   }
 
   updateFavorite() {
-    this.service.changeFavorite(this.thought).subscribe();
+    this.service.changeFavorite(this.thought).subscribe(() => {
+      this.listFavorites.splice(this.listFavorites.indexOf(this.thought), 1);
+    });
   }
 }

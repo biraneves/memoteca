@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Thought } from '../thoughts';
 import { ThoughtService } from '../thought.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-thoughts',
@@ -8,25 +9,36 @@ import { ThoughtService } from '../thought.service';
   styleUrls: ['./list-thoughts.component.scss'],
 })
 export class ListThoughtsComponent implements OnInit {
+  listFavorites: Thought[] = [];
   listThoughts: Thought[] = [];
-  presentPage: number = 1;
+  currentPage: number = 1;
   moreThoughtsExist: boolean = true;
   filter: string = '';
   favorites: boolean = false;
+  title: string = 'Meu Mural';
 
-  constructor(private service: ThoughtService) {}
+  constructor(private service: ThoughtService, private router: Router) {}
 
   ngOnInit(): void {
     this.service
-      .list(this.presentPage, this.filter, this.favorites)
+      .list(this.currentPage, this.filter, this.favorites)
       .subscribe((listThoughts) => {
         this.listThoughts = listThoughts;
       });
   }
 
+  reloadComponent() {
+    this.favorites = false;
+    this.currentPage = 1;
+
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate([this.router.url]);
+  }
+
   loadMoreThoughts() {
     this.service
-      .list(++this.presentPage, this.filter, this.favorites)
+      .list(++this.currentPage, this.filter, this.favorites)
       .subscribe((listThoughts) => {
         this.listThoughts.push(...listThoughts);
 
@@ -35,25 +47,27 @@ export class ListThoughtsComponent implements OnInit {
   }
 
   searchThoughts() {
-    this.presentPage = 1;
+    this.currentPage = 1;
     this.moreThoughtsExist = true;
 
     this.service
-      .list(this.presentPage, this.filter, this.favorites)
+      .list(this.currentPage, this.filter, this.favorites)
       .subscribe((listThoughts) => {
         this.listThoughts = listThoughts;
       });
   }
 
-  listFavorites() {
-    this.presentPage = 1;
+  listFavoriteThoughts() {
+    this.currentPage = 1;
     this.moreThoughtsExist = true;
     this.favorites = true;
+    this.title = 'Meus Favoritos';
 
     this.service
-      .list(this.presentPage, this.filter, this.favorites)
+      .list(this.currentPage, this.filter, this.favorites)
       .subscribe((listThoughts) => {
         this.listThoughts = listThoughts;
+        this.listFavorites = listThoughts;
       });
   }
 }
