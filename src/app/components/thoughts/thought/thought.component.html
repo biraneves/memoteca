@@ -6,6 +6,12 @@
   <p class="content">{{ thought.content }}</p>
   <p class="author">{{ thought.author }}</p>
   <div class="actions">
+    <button class="favorite-button" (click)="updateFavorite()">
+      <img
+        src="/assets/images/icons/{{ changeFavoriteIcon() }}-favorite-icon.png"
+        alt="Ícone favorito {{ changeFavoriteIcon() }}"
+      />
+    </button>
     <button
       class="edit-button"
       routerLink="/thoughts/edit-thought/{{ thought.id }}"

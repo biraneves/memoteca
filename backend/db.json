@@ -4,60 +4,70 @@
       "id": 1,
       "content": "Que bom que você veio!",
       "author": "Bira",
-      "model": "model1"
+      "model": "model1",
+      "favorite": false
     },
     {
       "id": 2,
       "content": "Estudando Angular!!!",
       "author": "Bira",
-      "model": "model2"
+      "model": "model2",
+      "favorite": false
     },
     {
       "id": 4,
       "content": "Na minha máquina funciona!",
       "author": "Dev Cara de Pau",
-      "model": "model2"
+      "model": "model2",
+      "favorite": true
     },
     {
       "content": "Na ciência da computação, dizemos que há 10 tipos de pessoas: aquelas que entendem binário e aquelas que não. Mas se você achar que programar é fácil, é porque você não entendeu o problema... ou talvez você seja um compilador disfarçado, pronto para debugar nossas vidas com lógica e um pouco de café.",
       "author": "ChatGPT",
       "model": "model1",
+      "favorite": true,
       "id": 5
     },
     {
       "content": "Bioinformática: onde ATGC não é apenas uma sequência aleatória, mas a senha para desbloquear os segredos da vida. É como jogar Tetris, mas em vez de linhas, você está tentando encaixar genes, e cada vez que você acha que entendeu, a natureza diz: 'Patch novo disponível!'. E lembre-se, se a vida lhe der limões, provavelmente há um gene para isso também.",
       "author": "ChatGPT",
       "model": "model1",
+      "favorite": false,
       "id": 6
     },
     {
       "content": "Na ciência da computação, a única constante é a mudança. A única certeza é que, assim que você aprender algo, estará desatualizado. Mas não se preocupe, você pode usar seu novo conhecimento para criar memes sobre como a nova tecnologia é ridícula.",
       "author": "Gemini (RIP Bard)",
       "model": "model2",
+      "favorite": false,
       "id": 7
     },
     {
       "content": "Por que os programadores gostam de passear na floresta? Porque lá eles podem fazer um fork sem se preocupar com conflitos! 🌳🍴",
       "author": "Copilot",
       "model": "model3",
+      "favorite": false,
       "id": 8
     },
     {
       "content": "Que a Força esteja com você!",
       "author": "Mestre Yoda",
       "model": "model1",
+      "favorite": true,
       "id": 9
     },
     {
       "content": "Se eu for aí e achar, esfrego na sua cara!",
       "author": "Mãe",
       "model": "model1",
+      "favorite": false,
       "id": 10
     },
     {
       "content": "Resolver o bug não consegue? Esfriar a cabeça você deve!",
       "author": "Mestre Yoda",
       "model": "model3",
+      "favorite": true,
       "id": 11
     }
   ]

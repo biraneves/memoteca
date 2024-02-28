@@ -6,7 +6,8 @@
 }
 
 .delete-button,
-.edit-button {
+.edit-button,
+.favorite-button {
   border: none;
   cursor: pointer;
   margin-top: 10px;
@@ -16,7 +17,8 @@
   margin-left: 5px;
 }
 
-.edit-button {
+.edit-button,
+.favorite-button {
   margin-right: 10px;
 }
 

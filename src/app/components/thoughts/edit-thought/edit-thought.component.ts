@@ -33,6 +33,7 @@ export class EditThoughtComponent implements OnInit {
         Validators.compose([Validators.required, Validators.minLength(3)]),
       ],
       model: [''],
+      favorite: [false],
     });
 
     const id = this.route.snapshot.paramMap.get('id');
@@ -44,6 +45,7 @@ export class EditThoughtComponent implements OnInit {
           content: thought.content,
           author: thought.author,
           model: thought.model,
+          favorite: thought.favorite,
         });
       });
     }
