@@ -13,10 +13,10 @@
       "model": "model2"
     },
     {
+      "id": 4,
       "content": "Na minha máquina funciona!",
       "author": "Dev Cara de Pau",
-      "model": "model2",
-      "id": 4
+      "model": "model2"
     },
     {
       "content": "Na ciência da computação, dizemos que há 10 tipos de pessoas: aquelas que entendem binário e aquelas que não. Mas se você achar que programar é fácil, é porque você não entendeu o problema... ou talvez você seja um compilador disfarçado, pronto para debugar nossas vidas com lógica e um pouco de café.",
@@ -41,6 +41,18 @@
       "author": "Copilot",
       "model": "model3",
       "id": 8
+    },
+    {
+      "content": "Que a Força esteja com você!",
+      "author": "Mestre Yoda",
+      "model": "model1",
+      "id": 9
+    },
+    {
+      "content": "Se eu for aí e achar, esfrego na sua cara!",
+      "author": "Mãe",
+      "model": "model1",
+      "id": 10
     }
   ]
 }

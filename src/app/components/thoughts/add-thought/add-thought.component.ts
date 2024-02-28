@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Thought } from '../thoughts';
 import { ThoughtService } from '../thought.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-thought',
@@ -20,16 +19,35 @@ export class AddThoughtComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      content: ['Formulário reativo'],
-      author: ['Angular'],
+      content: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(/(.|\s)*\S(.|\s)*/),
+        ]),
+      ],
+      author: [
+        '',
+        Validators.compose([Validators.required, Validators.minLength(3)]),
+      ],
       model: ['model1'],
     });
   }
 
+  enableButton(): string {
+    if (this.form.valid) return 'button';
+
+    return 'button--disabled';
+  }
+
   addThought() {
-    this.service.create(this.form.value).subscribe(() => {
-      this.router.navigate(['/']);
-    });
+    console.log(this.form.get('author')?.errors);
+
+    if (this.form.valid) {
+      this.service.create(this.form.value).subscribe(() => {
+        this.router.navigate(['/']);
+      });
+    }
   }
 
   cancel() {

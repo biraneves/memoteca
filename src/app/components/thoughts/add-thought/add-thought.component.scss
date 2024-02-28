@@ -142,3 +142,21 @@ span {
   transition: 0.5s ease;
   color: misc.$blue-500;
 }
+
+.message {
+  &--error {
+    font-size: misc.p2r(12px);
+    margin-left: 5px;
+    color: misc.$red-500;
+    margin-top: -25px;
+    margin-bottom: 20px;
+  }
+}
+
+.button {
+  &--disabled {
+    margin: 5px;
+    margin-top: 70px;
+    width: 200px;
+  }
+}

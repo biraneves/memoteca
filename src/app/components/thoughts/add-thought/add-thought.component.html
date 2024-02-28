@@ -10,6 +10,12 @@
       id="thought"
       placeholder="Digite o pensamento"
     ></textarea>
+    <div
+      class="message--error"
+      *ngIf="form.get('content')?.errors && form.get('content')?.touched"
+    >
+      Pensamento é obrigatório
+    </div>
     <label for="author">Autoria</label>
     <input
       type="text"
@@ -18,6 +24,18 @@
       formControlName="author"
       placeholder="Informe a autoria ou fonte"
     />
+    <div
+      class="message--error"
+      *ngIf="form.get('author')?.errors?.['required'] && form.get('author')?.touched"
+    >
+      É necessário informar autor ou fonte.
+    </div>
+    <div
+      class="message--error"
+      *ngIf="form.get('author')?.errors?.['minlength']"
+    >
+      Autor ou fonte deve ter no mínimo 3 caracteres.
+    </div>
     <label for="model">Selecione o modelo do card</label>
     <div class="container-radio">
       <div class="radio-model">
@@ -91,7 +109,13 @@
       </div>
     </div>
     <div class="actions">
-      <button (click)="addThought()" class="button">Salvar</button>
+      <button
+        (click)="addThought()"
+        [disabled]="!form.valid"
+        [ngClass]="enableButton()"
+      >
+        Salvar
+      </button>
       <button (click)="cancel()" class="button">Cancelar</button>
     </div>
   </form>
