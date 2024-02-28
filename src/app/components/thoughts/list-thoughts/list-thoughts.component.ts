@@ -11,20 +11,36 @@ export class ListThoughtsComponent implements OnInit {
   listThoughts: Thought[] = [];
   presentPage: number = 1;
   moreThoughtsExist: boolean = true;
+  filter: string = '';
 
   constructor(private service: ThoughtService) {}
 
   ngOnInit(): void {
-    this.service.list(this.presentPage).subscribe((listThoughts) => {
-      this.listThoughts = listThoughts;
-    });
+    this.service
+      .list(this.presentPage, this.filter)
+      .subscribe((listThoughts) => {
+        this.listThoughts = listThoughts;
+      });
   }
 
   loadMoreThoughts() {
-    this.service.list(++this.presentPage).subscribe((listThoughts) => {
-      this.listThoughts.push(...listThoughts);
+    this.service
+      .list(++this.presentPage, this.filter)
+      .subscribe((listThoughts) => {
+        this.listThoughts.push(...listThoughts);
 
-      if (!listThoughts.length) this.moreThoughtsExist = false;
-    });
+        if (!listThoughts.length) this.moreThoughtsExist = false;
+      });
+  }
+
+  searchThoughts() {
+    this.presentPage = 1;
+    this.moreThoughtsExist = true;
+
+    this.service
+      .list(this.presentPage, this.filter)
+      .subscribe((listThoughts) => {
+        this.listThoughts = listThoughts;
+      });
   }
 }
